@@ -1,0 +1,21 @@
+﻿@page "/test"
+@inject IJSRuntime JSRuntime
+
+<h1>This is a test</h1>
+
+Testing stuff @testVar
+
+<button class="btn btn-primary" @onclick="ToggleTestVar">Test me</button>
+
+@code {
+    private string title = "Test";
+    private bool testVar = true;
+
+    private void ToggleTestVar()
+    {
+        testVar = !testVar;
+
+        // _ = JSRuntime.InvokeVoidAsync("console.log", [$"[{title}]",  testVar]);
+        _ = JSRuntime.InvokeVoidAsync("console.log", ["[test]", testVar]);
+    }
+}
