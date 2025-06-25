@@ -1,5 +1,7 @@
 ﻿@page "/white"
 
+@inject NavigationManager Navigation
+
 <style>
     .white-screen {
         background-color: white;
@@ -16,6 +18,6 @@
 @code {
     private void GoBack()
     {
-        Shell.Current.GoToAsync("..");
+        Navigation.NavigateTo("/");
     }
 }

@@ -1,5 +1,8 @@
 ﻿@page "/"
 
+@using Plugin.LocalNotification;
+@inject NavigationManager Navigation
+
 <h1>Lantern [@isFlashOn]</h1>
 
 Turn on the lantern to see the light!
@@ -41,11 +44,11 @@ Turn on the lantern to see the light!
             }
         };
 
-        NotificationCenter.Current.Show(request);
+        LocalNotificationCenter.Current.Show(request);
     }
 
     private void ShowWhiteScreen()
     {
-        Shell.Current.GoToAsync(nameof(WhiteScreenPage));
+        Navigation.NavigateTo("/white");
     }
 }
