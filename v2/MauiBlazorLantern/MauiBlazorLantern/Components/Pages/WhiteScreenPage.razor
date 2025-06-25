@@ -1,0 +1,21 @@
+﻿@page "/white"
+
+<style>
+    .white-screen {
+        background-color: white;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<div class="white-screen" @onclick="GoBack"></div>
+
+@code {
+    private void GoBack()
+    {
+        Shell.Current.GoToAsync("..");
+    }
+}
